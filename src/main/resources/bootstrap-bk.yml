@@ -1,0 +1,54 @@
+#Application Configuration
+server:
+  port: 8091
+  error:
+    include-message: always
+#    include-binding-errors: always
+#    include-stacktrace: on_trace_param
+    include-exception: true
+
+spring:
+  application:
+    name: product-service
+
+  # Enabling H2 consoles
+  h2:
+    console:
+      enabled: true
+    path: /h2-console
+  # ========
+  # BD
+  # ========
+  datasource:
+    url: jdbc:h2:mem:testdb
+    driverClassName: org.h2.Driver
+    username: sa
+    password: password
+
+  # ========
+  # JPA / HIBERNATE
+  # ========
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    database-platform: org.hibernate.dialect.H2Dialect
+    properties:
+      hibernate:
+        show_sql: true
+        use_sql_comments: false
+        format_sql: false
+
+logging:
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} ${LOG_LEVEL_PATTERN:-%5p} %m%n"
+
+#  cloud:
+#    config:
+#      uri: http://localhost:8081
+#      username: root
+#      password: s3cr3t
+#  boot:
+#    admin:
+#      client:
+#        url: http://localhost:8086
