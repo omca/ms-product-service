@@ -49,5 +49,5 @@ jobs:
       with:
         app-name: 'azf-webapp-code-1'
         slot-name: 'production'
-        publish-profile: ${{ secrets.AzureAppService_PublishProfile_50c3b9b1260e4ea984a4fd4bf3e01bb3 }}
+        publish-profile: ${{ secrets.AzureAppService_PublishProfile_1d693fc212ff46d7b7087a903fc25d8a }}
         package: '*.jar'
